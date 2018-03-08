@@ -1,8 +1,5 @@
-// Select color input
-
-
-
-// Select size input
+// Shortcut to #pixelCanvas
+let gridTable = $("#pixelCanvas");
 
 $("#submit").click(function(event) {
   // When I click on the button, it won't refresh the page
@@ -17,8 +14,7 @@ $("#submit").click(function(event) {
 // When size is submitted by the user, call makeGrid()
 
 function makeGrid(height, width) {
-  // Shortcut to #pixelCanvas
-  let gridTable = $("#pixelCanvas");
+  //Empty out the table
   gridTable.empty();
 
   // Create the height of the grid
@@ -29,5 +25,16 @@ function makeGrid(height, width) {
   // Create the width of the grid
   for (let w = 0; w < width; w++) {
     $("tr").append("<td></td>");
+
+  // Select a color and input the color on the box you click on
+  $("td").mousedown(function(event) {
+    let color = $("#colorPicker").val();
+    $(this).css("background-color", color);
+  });
+  // Double click to remove the color.
+  $("td").dblclick(function() {
+    $(this).css("background-color", "transparent");
+  });
+
   }
 }
