@@ -1,6 +1,7 @@
 // Shortcut to #pixelCanvas
 let gridTable = $("#pixelCanvas");
 
+// Function for when you click the submit button
 $("#submit").click(function(event) {
   // When I click on the button, it won't refresh the page
   event.preventDefault();
