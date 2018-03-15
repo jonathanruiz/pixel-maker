@@ -1,5 +1,7 @@
 // Shortcut to #pixelCanvas
 let gridTable = $("#pixelCanvas");
+let inputHeight = $("#inputHeight").val();
+let inputWidth = $("#inputWidth").val();
 
 // When size is submitted by the user, call makeGrid()
 function makeGrid(height, width) {
@@ -28,13 +30,16 @@ function makeGrid(height, width) {
   });
 }
 
+// By default, this will create a grid with the default values
+makeGrid(inputHeight, inputWidth);
+
 // Function for when you click the submit button
 $("#submit").click(function(event) {
   // When I click on the button, it won't refresh the page
   event.preventDefault();
 
   // Look for the values of the numbers and input them into the makeGrid() function
-  let inputHeight = $("#inputHeight").val();
-  let inputWidth = $("#inputWidth").val();
+  inputHeight = $("#inputHeight").val();
+  inputWidth = $("#inputWidth").val();
   makeGrid(inputHeight, inputWidth);
 });
