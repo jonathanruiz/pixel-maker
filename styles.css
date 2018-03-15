@@ -45,3 +45,37 @@ form, button {
 }
 
 /* CSS Grid */
+.container {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    grid-template-rows: 100px 50px 150px 150px auto;
+    grid-gap: 5px;
+    grid-template-areas: 
+    "head head"
+    "  .  cont"
+    "size cont"
+    "colo cont"
+    "  .  cont";
+}
+
+.header {
+    grid-area: head;
+
+}
+
+.sizeSelector {
+    grid-area: size;
+    border: 5px solid teal;
+    border-radius: 25px;
+    
+}
+
+.colorSelector {
+    grid-area: colo;
+    border: 5px solid teal;
+    border-radius: 25px;
+}
+
+.content {
+    grid-area: cont;
+}
