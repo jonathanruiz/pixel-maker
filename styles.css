@@ -1,5 +1,10 @@
+html, body {
+  height: 100%;
+}
+
 body {
-    text-align: center;
+	text-align: center;
+	margin: 0;
 }
 
 h1 {
@@ -10,11 +15,6 @@ h1 {
 
 h2 {
     font-family: 'Permanent Marker';
-    margin: 1em 0 0.25em;
-}
-
-h2:first-of-type {
-    margin-top: 0.5em;
 }
 
 p, button {
@@ -44,25 +44,63 @@ input[type=number] {
     width: 6em;
 }
 
-
 .border {
     border: 5px solid teal;
     border-radius: 25px;
-    padding: 5px 5px;
+	padding: 0px 5px 10px 5px;
+	margin: 10px;
+}
+
+.footer-distributed{
+	background-color: #292c2f;
+	box-sizing: border-box;
+	width: 100%;
+	text-align: left;
+	padding: 45px 50px;
+	margin-top: 80px;
+}
+
+.footer-distributed .footer-left p{
+	color:  #8f9296;
+	font-size: 14px;
+	margin: 0;
+}
+
+/* Footer links */
+
+.footer-distributed .footer-right{
+	float: right;
+	margin-top: 6px;
+	max-width: 180px;
+}
+
+.footer-distributed .footer-right a{
+	display: inline-block;
+	width: 35px;
+	height: 35px;
+	background-color:  #33383b;
+	border-radius: 2px;
+
+	font-size: 20px;
+	color: #ffffff;
+	text-align: center;
+	line-height: 35px;
+	margin-left: 3px;
 }
 
 /* CSS Grid */
 .container {
     display: grid;
     grid-template-columns: 1fr 2fr;
-    grid-template-rows: 100px 20px auto auto auto;
+    grid-template-rows: 100px 20px auto auto auto auto;
     grid-gap: 5px;
     grid-template-areas: 
     "head head"
     "  .  cont"
     "size cont"
     "colo cont"
-    "  .  cont";
+    "  .  cont"
+    "foot foot";
 }
 
 .header {
@@ -82,45 +120,46 @@ input[type=number] {
 .content {
     grid-area: cont;
 }
+
+.footer-distributed {
+    grid-area: foot;
+}
+
 
 /* Responsive Design for mobile */
 @media only screen and (max-width: 800px)  {
 
-h1 {
-    font-size: 50px;
-}
+	/* Header */
+	h1 {
+		font-size: 50px;
+	}
 
-.container {
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: auto auto auto auto;
-    grid-gap: 5px;
-    grid-template-areas: 
-    "head"
-    "size"
-    "colo"
-    "cont";
-}
+	/* Footer */
+	.footer-distributed .footer-left,
+	.footer-distributed .footer-right{
+		text-align: center;
+	}
 
-.header {
-    grid-area: head;
+	.footer-distributed .footer-right{
+		float: none;
+		margin: 0 auto 20px;
+	}
 
-}
+	.footer-distributed .footer-left p.footer-links{
+		line-height: 1.8;
+	}
 
-.sizeSelector {
-    grid-area: size;
-    border: 5px solid teal;
-    border-radius: 25px;
-    
-}
-
-.colorSelector {
-    grid-area: colo;
-    border: 5px solid teal;
-    border-radius: 25px;
-}
-
-.content {
-    grid-area: cont;
-}
+	/* Grid */
+	.container {
+		display: grid;
+		grid-template-columns: 1fr;
+		grid-template-rows: auto auto auto auto auto;
+		grid-gap: 5px;
+		grid-template-areas: 
+		"head"
+		"size"
+		"colo"
+		"cont"
+		"foot";
+	}
 }

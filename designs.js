@@ -39,7 +39,7 @@ $("#submit").click(function(event) {
   event.preventDefault();
 
   // Look for the values of the numbers and input them into the makeGrid() function
-  inputHeight = $("#inputHeight").val();
-  inputWidth = $("#inputWidth").val();
-  makeGrid(inputHeight, inputWidth);
+    inputHeight = $("#inputHeight").val();
+    inputWidth = $("#inputWidth").val();
+    makeGrid(inputHeight, inputWidth);
 });

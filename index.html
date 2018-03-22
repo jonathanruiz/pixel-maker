@@ -1,12 +1,14 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <title>Pixel Art Maker!</title>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Monoton">
-    <link href="https://fonts.googleapis.com/css?family=Permanent+Marker|Roboto" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css?family=Permanent+Marker|Roboto" rel="stylesheet">
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 </head>
+
 <body>
     <div class="container">
         <header class="header">
@@ -15,8 +17,12 @@
         <div class="sizeSelector border">
             <h2>Choose Grid Size</h2>
             <form id="sizePicker">
-                <p>Grid Height: <input type="number" id="inputHeight" name="height" min="1" value="10"></p>
-                <p>Grid Width: <input type="number" id="inputWidth" name="width" min="1" value="10"></p>
+                <p>Grid Height:
+                    <input type="number" id="inputHeight" name="height" min="1" max="30" value="10">
+                </p>
+                <p>Grid Width:
+                    <input type="number" id="inputWidth" name="width" min="1" max="30" value="10">
+                </p>
                 <button type="submit" id="submit">Submit</button>
             </form>
         </div>
@@ -29,7 +35,25 @@
             <table id="pixelCanvas"></table>
 
             <script src="designs.js"></script>
+
         </div>
+        <footer class="footer-distributed">
+            <div class="footer-right">
+                <a href="https://twitter.com/jonathandruiz">
+                    <i class="fa fa-twitter"></i>
+                </a>
+                <a href="https://github.com/jonathanruiz">
+                    <i class="fa fa-github"></i>
+                </a>
+                <a href="https://codepen.io/jonathanruiz/">
+                    <i class="fa fa-codepen"></i>
+                </a>
+            </div>
+            <div class="footer-left">
+                <p>Jonathan Ruiz &copy; 2018</p>
+            </div>
+        </footer>
     </div>
 </body>
+
 </html>
