@@ -47,3 +47,13 @@
 let gridTable = document.querySelector('#pixelCanvas');
 let inputHeight = document.querySelector('#inputHeight');
 let inputWidth = document.querySelector('#inputWidth');
+
+function makeGrid(height, width) {
+  //Empty out the table
+  gridTable.empty();
+
+  // Create the height of the grid
+  for (let h = 0; h < height; h++) {
+    gridTable.append("<tr></tr>");
+  }
+}
