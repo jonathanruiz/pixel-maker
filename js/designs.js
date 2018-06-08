@@ -43,3 +43,7 @@
 //     inputWidth = $("#inputWidth").val();
 //     makeGrid(inputHeight, inputWidth);
 // });
+
+let gridTable = document.querySelector('#pixelCanvas');
+let inputHeight = document.querySelector('#inputHeight');
+let inputWidth = document.querySelector('#inputWidth');
