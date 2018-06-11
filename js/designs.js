@@ -45,15 +45,23 @@
 // });
 
 let gridTable = document.querySelector('#pixelCanvas');
-let inputHeight = document.querySelector('#inputHeight');
-let inputWidth = document.querySelector('#inputWidth');
+let inputHeight = document.querySelector('#inputHeight').value;
+let inputWidth = document.querySelector('#inputWidth').value;
 
 function makeGrid(height, width) {
-  //Empty out the table
-  gridTable.empty();
 
   // Create the height of the grid
   for (let h = 0; h < height; h++) {
-    gridTable.append("<tr></tr>");
+    let tableRow = document.createElement('tr');
+    gridTable.appendChild(tableRow);
+
+    for (let w = 0; w < width; w++) {
+      let tableColumn = document.createElement('td');
+      tableRow.appendChild(tableColumn);
+    }
   }
 }
+
+inputHeight = document.querySelector("#inputHeight").value;
+inputWidth = document.querySelector("#inputWidth").value;
+makeGrid(inputHeight, inputWidth);
