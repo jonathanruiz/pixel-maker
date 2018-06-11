@@ -48,6 +48,8 @@ let gridTable = document.querySelector('#pixelCanvas');
 let inputHeight = document.querySelector('#inputHeight').value;
 let inputWidth = document.querySelector('#inputWidth').value;
 
+const submit = document.querySelector('#submit');
+
 function makeGrid(height, width) {
 
   // Create the height of the grid
@@ -55,6 +57,7 @@ function makeGrid(height, width) {
     let tableRow = document.createElement('tr');
     gridTable.appendChild(tableRow);
 
+    // Create the width of the grid
     for (let w = 0; w < width; w++) {
       let tableColumn = document.createElement('td');
       tableRow.appendChild(tableColumn);
@@ -62,6 +65,15 @@ function makeGrid(height, width) {
   }
 }
 
-inputHeight = document.querySelector("#inputHeight").value;
-inputWidth = document.querySelector("#inputWidth").value;
+// By default, this will create a grid with the default values
 makeGrid(inputHeight, inputWidth);
+
+// Function for when you click the submit button
+submit.addEventListener("click", function() {
+  // When I click on the button, it won't refresh the page
+  event.preventDefault();
+
+  inputHeight = document.querySelector("#inputHeight").value;
+  inputWidth = document.querySelector("#inputWidth").value;
+  makeGrid(inputHeight, inputWidth);
+});
