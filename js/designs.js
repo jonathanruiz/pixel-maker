@@ -2,19 +2,18 @@
 let gridTable = document.querySelector('#pixelCanvas');
 let inputHeight = document.querySelector('#inputHeight').value;
 let inputWidth = document.querySelector('#inputWidth').value;
+let tableElement = document.querySelector("table");
 const submit = document.querySelector('#submit');
 
 // When size is submitted by the user, call makeGrid()
 function makeGrid(height, width) {
-
-  // Selects table element
-  let tableElement = document.querySelector("table");
 
   // Empty out the table
   gridTable.innerHTML = "";
 
   // Create the height of the grid
   for (let h = 0; h < height; h++) {
+
     let tableRow = document.createElement('tr');
     gridTable.appendChild(tableRow);
 
@@ -25,12 +24,13 @@ function makeGrid(height, width) {
     }
   }
 
-  // Select a color and input the color on the box you click on
+  // Add a color on click
   tableElement.addEventListener("click", function() {
     let color = document.querySelector("#colorPicker").value;
     this.style.backgroundColor = color;
   });
 
+  // Remove the color on double click
   tableElement.addEventListener("dblclick", function () {
     this.style.backgroundColor = 'transparent';
   });
