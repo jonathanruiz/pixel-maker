@@ -7,6 +7,9 @@ const submit = document.querySelector('#submit');
 // When size is submitted by the user, call makeGrid()
 function makeGrid(height, width) {
 
+  // Selects table element
+  let tableElement = document.querySelector("table");
+
   // Empty out the table
   gridTable.innerHTML = "";
 
@@ -23,12 +26,12 @@ function makeGrid(height, width) {
   }
 
   // Select a color and input the color on the box you click on
-  document.querySelector("td").addEventListener("click", function() {
-    let color = document.querySelector('#colorPicker').value;
+  tableElement.addEventListener("click", function() {
+    let color = document.querySelector("#colorPicker").value;
     this.style.backgroundColor = color;
   });
 
-  document.querySelector("td").addEventListener("dblclick", function () {
+  tableElement.addEventListener("dblclick", function () {
     this.style.backgroundColor = 'transparent';
   });
 }
