@@ -44,13 +44,16 @@
 //     makeGrid(inputHeight, inputWidth);
 // });
 
+// // Shortcut to #pixelCanvas, #inputHeight, #inputWidth, #submit
 let gridTable = document.querySelector('#pixelCanvas');
 let inputHeight = document.querySelector('#inputHeight').value;
 let inputWidth = document.querySelector('#inputWidth').value;
-
 const submit = document.querySelector('#submit');
 
+// // When size is submitted by the user, call makeGrid()
 function makeGrid(height, width) {
+  // Empty out the table
+  gridTable.innerHTML = "";
 
   // Create the height of the grid
   for (let h = 0; h < height; h++) {
