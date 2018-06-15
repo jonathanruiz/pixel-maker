@@ -1,7 +1,5 @@
-// // Shortcut to #pixelCanvas, #inputHeight, #inputWidth, #submit
+// // Shortcut to #pixelCanvas and #submit
 let gridTable = document.querySelector("#pixelCanvas");
-let inputHeight = document.querySelector("#inputHeight").value;
-let inputWidth = document.querySelector("#inputWidth").value;
 const submit = document.querySelector("#submit");
 
 // When size is submitted by the user, call makeGrid()
@@ -51,7 +49,7 @@ submit.addEventListener("click", function() {
   // When I click on the button, it won't refresh the page
   event.preventDefault();
 
-  inputHeight = document.querySelector("#inputHeight").value;
-  inputWidth = document.querySelector("#inputWidth").value;
+  let inputHeight = document.querySelector("#inputHeight").value;
+  let inputWidth = document.querySelector("#inputWidth").value;
   makeGrid(inputHeight, inputWidth);
 });
