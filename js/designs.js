@@ -2,7 +2,6 @@
 let gridTable = document.querySelector('#pixelCanvas');
 let inputHeight = document.querySelector('#inputHeight').value;
 let inputWidth = document.querySelector('#inputWidth').value;
-let tableElement = document.querySelector("table");
 const submit = document.querySelector('#submit');
 
 // When size is submitted by the user, call makeGrid()
@@ -23,24 +22,32 @@ function makeGrid(height, width) {
       tableRow.appendChild(tableColumn);
     }
   }
-
-  // Add a color on click
-  tableElement.addEventListener("click", function() {
-    let color = document.querySelector("#colorPicker").value;
-    this.style.backgroundColor = color;
-  });
-
-  // Remove the color on double click
-  tableElement.addEventListener("dblclick", function () {
-    this.style.backgroundColor = 'transparent';
-  });
 }
+
+// Add a color on click
+gridTable.addEventListener("click", function () {
+  let color = document.querySelector("#colorPicker").value;
+  let pixel = event.target;
+  
+  if (pixel.tagName == 'TD') {
+    pixel.style.backgroundColor = color;
+  }
+});
+
+// Remove the color on double click
+gridTable.addEventListener("dblclick", function () {
+  let pixel = event.target;
+  if (pixel.tagName == 'TD') {
+    pixel.style.backgroundColor = 'transparent';
+  }
+});
 
 // By default, this will create a grid with the default values
 makeGrid(inputHeight, inputWidth);
 
 // Function for when you click the submit button
 submit.addEventListener("click", function() {
+
   // When I click on the button, it won't refresh the page
   event.preventDefault();
 
